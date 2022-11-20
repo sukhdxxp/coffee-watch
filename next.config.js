@@ -8,7 +8,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'purecatamphetamine.github.io',
-        port: '',
+        port: '443',
         pathname: '/country-flag-icons/**',
       },
     ],
