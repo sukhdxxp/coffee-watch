@@ -4,8 +4,8 @@
   "/_error": "pages/_error.js",
   "/": "pages/index.html",
   "/title/[id]": "pages/title/[id].html",
-  "/api/titles": "pages/api/titles.js",
   "/api/hello": "pages/api/hello.js",
   "/api/title/[id]": "pages/api/title/[id].js",
+  "/api/titles": "pages/api/titles.js",
   "/404": "pages/404.html"
 }

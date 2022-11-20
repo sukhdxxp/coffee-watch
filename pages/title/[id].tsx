@@ -10,7 +10,7 @@ export default function Title() {
   const router = useRouter();
   const { id } = router.query;
 
-  const { data, error } = useSwr<TitleResponse>(
+  const { data } = useSwr<TitleResponse>(
     router.query.id ? `/api/title/${id}` : null,
     fetcher
   );
@@ -30,6 +30,7 @@ export default function Title() {
       </Table.Header>
       <Table.Body>
         {items.map((item, key) => {
+          console.log('__item__', item);
           return (
             <Table.Row key={key}>
               <Table.Cell>

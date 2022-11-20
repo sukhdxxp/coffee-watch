@@ -6,19 +6,22 @@ import styles from "../styles/Home.module.css";
 import { Input } from "@nextui-org/react";
 import debounce from "lodash.debounce";
 
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
 export default function Home() {
   const [searchText, setSearchText] = useState("");
   const [programList, setProgramList] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const BASE_URL = "https://api.coffeecode.nl";
-      const API_URL = `${BASE_URL}/title?searchTerm=${searchText}`;
+      const API_URL = `/api/titles?search=${searchText}`;
       const rawResponse = await fetch(API_URL);
       const response = await rawResponse.json();
-      setProgramList(response);
+      if(response.data && response.data.length) {
+        setProgramList(response.data);
+      }
     };
-    if (searchText.length > 3) {
+    if (searchText.length > 2) {
       fetchData();
     } else {
       setProgramList([]);
@@ -51,9 +54,7 @@ export default function Home() {
           value={searchText}
         />
         <div className={styles.list}>
-          {programList.map((program, index) => {
-            return <ProgramCard key={index} program={program} />;
-          })}
+            <ProgramCard programs={programList} />
         </div>
       </main>
 

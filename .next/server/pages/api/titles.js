@@ -5,7 +5,7 @@ exports.id = 964;
 exports.ids = [964];
 exports.modules = {
 
-/***/ 5805:
+/***/ 805:
 /***/ ((module) => {
 
 module.exports = require("graphql-request");
@@ -24,7 +24,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 // EXTERNAL MODULE: external "graphql-request"
-var external_graphql_request_ = __webpack_require__(5805);
+var external_graphql_request_ = __webpack_require__(805);
 ;// CONCATENATED MODULE: ./lib/search.ts
 
 const query = external_graphql_request_.gql`
@@ -44,8 +44,10 @@ const query = external_graphql_request_.gql`
   }
   fragment SuggestedTitle on MovieOrShow {
     id
+    objectType
     content(country: $country, language: $language) {
       title
+      posterUrl
       originalReleaseYear
     }
   }
@@ -67,8 +69,14 @@ const parseData = (data)=>{
     return watchItems.map((item)=>({
             id: item.node.id,
             title: item.node.content.title,
-            releaseYear: item.node.content.originalReleaseYear
+            type: item.node.objectType,
+            releaseYear: item.node.content.originalReleaseYear,
+            posterUrl: createImageUrl(item.node.content.posterUrl)
         }));
+};
+const createImageUrl = (s = "")=>{
+    const PREFIX = "https://images.justwatch.com";
+    return PREFIX + s.replace("{profile}", "s332").replace("{format}", "webp");
 };
 
 ;// CONCATENATED MODULE: ./pages/api/titles.ts

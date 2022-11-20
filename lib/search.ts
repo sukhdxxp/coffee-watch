@@ -17,8 +17,10 @@ const query = gql`
   }
   fragment SuggestedTitle on MovieOrShow {
     id
+    objectType
     content(country: $country, language: $language) {
       title
+      posterUrl
       originalReleaseYear
     }
   }
@@ -45,7 +47,6 @@ export const searchTitle = async (title: string): Promise<any> => {
     query,
     getVariables(title)
   );
-
   return parseData(data);
 };
 
@@ -54,6 +55,13 @@ const parseData = (data: any) => {
   return watchItems.map((item: any) => ({
     id: item.node.id as string,
     title: item.node.content.title as string,
+    type: item.node.objectType as string,
     releaseYear: item.node.content.originalReleaseYear as number,
+    posterUrl: createImageUrl(item.node.content.posterUrl),
   })) as ResultItem[];
+};
+
+const createImageUrl = (s = "") => {
+  const PREFIX = "https://images.justwatch.com";
+  return PREFIX + s.replace("{profile}", "s332").replace("{format}", "webp");
 };

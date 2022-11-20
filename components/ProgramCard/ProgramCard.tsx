@@ -1,26 +1,50 @@
-import { Card, Text } from "@nextui-org/react";
-import styles from "../../styles/Home.module.css";
-import Link from "next/link";
+import { Card, Grid, Row, Text } from "@nextui-org/react";
+import { useRouter } from 'next/router'
+
 
 type Program = {
   id: string;
   title: string;
+  posterUrl: string;
   releaseYear: number;
 };
 
 type ProgramCardProps = {
-  program: Program;
+  programs: Program[];
 };
-export default function ProgramCard({ program }: ProgramCardProps) {
+export default function ProgramCard({ programs }: ProgramCardProps) {
+  const router = useRouter();
   return (
-    <Link href={`/title/${program.id}`} className={styles.programCard}>
-      <Card isPressable isHoverable variant="bordered" css={{ mw: "400px" }}>
-        <Card.Body>
-          <Text>
-            {program.title} <span>({program.releaseYear})</span>
-          </Text>
-        </Card.Body>
-      </Card>
-    </Link>
+    <Grid.Container gap={2} justify="flex-start">
+      {programs.map((item, index) => (
+        <Grid xs={6} sm={3} key={index}>
+          <Card isPressable onClick={() => router.push(`/title/${item.id}`)}>
+            <Card.Body css={{ p: 0 }}>
+              <Card.Image
+                src={item.posterUrl}
+                objectFit="cover"
+                width="100%"
+                height={140}
+                alt={item.title}
+              />
+            </Card.Body>
+            <Card.Footer css={{ justifyItems: "flex-start" }}>
+              <Row wrap="wrap" justify="space-between" align="center">
+                <Text b>{item.title}</Text>
+                <Text
+                  css={{
+                    color: "$accents7",
+                    fontWeight: "$semibold",
+                    fontSize: "$sm",
+                  }}
+                >
+                  {item.releaseYear}
+                </Text>
+              </Row>
+            </Card.Footer>
+          </Card>
+        </Grid>
+      ))}
+    </Grid.Container>
   );
 }

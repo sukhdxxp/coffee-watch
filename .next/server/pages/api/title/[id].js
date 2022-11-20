@@ -5,14 +5,14 @@ exports.id = 631;
 exports.ids = [631];
 exports.modules = {
 
-/***/ 5805:
+/***/ 805:
 /***/ ((module) => {
 
 module.exports = require("graphql-request");
 
 /***/ }),
 
-/***/ 3836:
+/***/ 836:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -24,7 +24,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 // EXTERNAL MODULE: external "graphql-request"
-var external_graphql_request_ = __webpack_require__(5805);
+var external_graphql_request_ = __webpack_require__(805);
 ;// CONCATENATED MODULE: ./lib/countries.ts
 const COUNTRIES_LIST = [
     "US",
@@ -178,7 +178,7 @@ async function handler(req, res) {
 var __webpack_require__ = require("../../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(3836));
+var __webpack_exports__ = (__webpack_exec__(836));
 module.exports = __webpack_exports__;
 
 })();

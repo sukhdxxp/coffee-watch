@@ -20,6 +20,7 @@ export interface FlatrateEntity {
   retailPriceValue?: null;
   currency: string;
   type: string;
+  posterUrl: string;
   package: Package;
 }
 export interface Package {
