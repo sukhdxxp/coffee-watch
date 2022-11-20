@@ -17,7 +17,7 @@ export default function Home() {
       const API_URL = `/api/titles?search=${searchText}`;
       const rawResponse = await fetch(API_URL);
       const response = await rawResponse.json();
-      if(response.data && response.data.length) {
+      if (response.data && response.data.length) {
         setProgramList(response.data);
       }
     };
@@ -42,6 +42,7 @@ export default function Home() {
           name="description"
           content="See where to find your favorite shows"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -54,7 +55,7 @@ export default function Home() {
           value={searchText}
         />
         <div className={styles.list}>
-            <ProgramCard programs={programList} />
+          <ProgramCard programs={programList} />
         </div>
       </main>
 
