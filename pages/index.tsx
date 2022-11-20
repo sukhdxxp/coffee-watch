@@ -12,7 +12,6 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log("__fetchong__now");
       const BASE_URL = "https://api.coffeecode.nl";
       const API_URL = `${BASE_URL}/title?searchTerm=${searchText}`;
       const rawResponse = await fetch(API_URL);
