@@ -27,16 +27,10 @@ __webpack_require__.d(__webpack_exports__, {
 var external_graphql_request_ = __webpack_require__(805);
 ;// CONCATENATED MODULE: ./lib/countries.ts
 const COUNTRIES_LIST = [
-    "US",
     "NL",
-    "DE",
     "IN",
-    "GB",
-    "AU",
-    "SG",
-    "FR",
-    "AR",
-    "BR"
+    "US",
+    "DE"
 ];
 
 ;// CONCATENATED MODULE: ./lib/title.ts
@@ -152,14 +146,14 @@ const parseData = (data = [])=>{
         if (dataItem.status === "fulfilled") {
             const country = dataItem.value?.country || "UNKNOWN";
             const nodes = dataItem.value?.node.flatrate || [];
-            const nodeRows = nodes.map((node)=>({
-                    ...node,
-                    country: country,
-                    countryIcon: `https://purecatamphetamine.github.io/country-flag-icons/3x2/${country}.svg`
-                }));
-            parsedData.push(...nodeRows);
+            const services = nodes.map((node)=>node.package.clearName);
+            parsedData.push({
+                country: country,
+                countryIcon: `https://purecatamphetamine.github.io/country-flag-icons/3x2/${country}.svg`,
+                services: services.join(", ")
+            });
         }
-        return parsedData;
+        return parsedData.filter((item)=>item.services);
     }, []);
 };
 

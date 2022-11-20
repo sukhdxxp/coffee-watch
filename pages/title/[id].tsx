@@ -4,6 +4,8 @@ import { TitleResponse } from "../../lib/types";
 import useSwr from "swr";
 import Image from "next/image";
 
+import styles from "../../styles/Home.module.css";
+
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function Title() {
@@ -30,18 +32,16 @@ export default function Title() {
       </Table.Header>
       <Table.Body>
         {items.map((item, key) => {
-          console.log('__item__', item);
           return (
             <Table.Row key={key}>
               <Table.Cell>
-                <Image
+                <img
                   src={item.countryIcon}
                   alt={item.country}
-                  width={48}
-                  height={32}
+                  className={styles.itemIcon}
                 />
               </Table.Cell>
-              <Table.Cell>{item.package.clearName}</Table.Cell>
+              <Table.Cell>{item.services}</Table.Cell>
             </Table.Row>
           );
         })}

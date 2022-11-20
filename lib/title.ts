@@ -115,13 +115,13 @@ const parseData = (data: ApiResponse[] = []) => {
     if (dataItem.status === "fulfilled") {
       const country = dataItem.value?.country || "UNKNOWN";
       const nodes = dataItem.value?.node.flatrate || [];
-      const nodeRows = nodes.map((node) => ({
-        ...node,
+      const services = nodes.map((node) => node.package.clearName);
+      parsedData.push({
         country: country,
         countryIcon: `https://purecatamphetamine.github.io/country-flag-icons/3x2/${country}.svg`,
-      }));
-      parsedData.push(...nodeRows);
+        services: services.join(", "),
+      });
     }
-    return parsedData;
+    return parsedData.filter((item: any) => item.services);
   }, [] as any);
 };

@@ -40,19 +40,9 @@ export interface BuyEntity {
 export interface TitleResponse {
   data?: (DataEntity)[] | null;
 }
-
 export interface DataEntity {
-  presentationType: string;
-  monetizationType: string;
-  retailPrice?: null;
-  retailPriceValue?: null;
-  currency: string;
-  type: string;
-  package: Package;
   country: string;
   countryIcon: string;
+  services: string;
 }
-export interface Package {
-  packageId: number;
-  clearName: string;
-}
+
