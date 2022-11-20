@@ -30,7 +30,13 @@ const COUNTRIES_LIST = [
     "NL",
     "IN",
     "US",
-    "DE"
+    "DE",
+    "GB",
+    "AU",
+    "SG",
+    "FR",
+    "AR",
+    "BR"
 ];
 
 ;// CONCATENATED MODULE: ./lib/title.ts
