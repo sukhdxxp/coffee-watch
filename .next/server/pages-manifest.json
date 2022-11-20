@@ -1,11 +1,11 @@
 {
-  "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/api/hello": "pages/api/hello.js",
+  "/_app": "pages/_app.js",
   "/title/[id]": "pages/title/[id].html",
   "/": "pages/index.html",
-  "/api/titles": "pages/api/titles.js",
-  "/api/title/[id]": "pages/api/title/[id].js",
   "/_error": "pages/_error.js",
+  "/api/hello": "pages/api/hello.js",
+  "/api/title/[id]": "pages/api/title/[id].js",
+  "/api/titles": "pages/api/titles.js",
   "/404": "pages/404.html"
 }

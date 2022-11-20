@@ -29,8 +29,14 @@ var external_graphql_request_ = __webpack_require__(805);
 const COUNTRIES_LIST = [
     "US",
     "NL",
-    // "DE",
-    "IN"
+    "DE",
+    "IN",
+    "GB",
+    "AU",
+    "SG",
+    "FR",
+    "AR",
+    "BR"
 ];
 
 ;// CONCATENATED MODULE: ./lib/title.ts
