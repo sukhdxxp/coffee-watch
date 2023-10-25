@@ -2,6 +2,9 @@
 
 coffee-watch is a web application that enables users to discover where a specific TV show or movie is available for streaming across various platforms. No more endless scrolling and searching; coffee-watch simplifies your entertainment choices.
 
+<img width="406" alt="image" src="https://github.com/sukhdxxp/coffee-watch/assets/135436055/d4fca6cd-f857-4c1b-bea5-2c3b3d01b759">
+
+
 ## Features
 
 - Search for a TV show or movie to find out where it can be streamed.
