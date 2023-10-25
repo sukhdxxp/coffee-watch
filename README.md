@@ -35,10 +35,6 @@ We welcome contributions from the open-source community! If you'd like to improv
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-
-- Special thanks to our development team for creating coffee-watch.
-
 ---
 
 Enjoy using coffee-watch to streamline your entertainment choices. If you have any questions or ideas for enhancements, don't hesitate to reach out.
