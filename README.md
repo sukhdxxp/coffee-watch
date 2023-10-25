@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# coffee-watch
 
-## Getting Started
+coffee-watch is a web application that enables users to discover where a specific TV show or movie is available for streaming across various platforms. No more endless scrolling and searching; coffee-watch simplifies your entertainment choices.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Search for a TV show or movie to find out where it can be streamed.
+- Get a list of streaming platforms that offer the selected content.
+- Click on a platform to get more information and start watching.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- Framework: Next.js
+- Deployment: Vercel
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Installation
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To run coffee-watch locally, follow these steps:
 
-## Learn More
+1. Clone this repository.
+2. Install the necessary dependencies by running `npm install` or `yarn install`.
+3. Start the development server by running `npm run dev` or `yarn dev`.
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Enter the name of a TV show or movie in the search bar.
+2. Hit "Search" to see the available streaming platforms.
+3. Click on a platform to get more details and start streaming.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+We welcome contributions from the open-source community! If you'd like to improve coffee-watch or have suggestions, please feel free to open issues and submit pull requests.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Special thanks to our development team for creating coffee-watch.
+
+---
+
+Enjoy using coffee-watch to streamline your entertainment choices. If you have any questions or ideas for enhancements, don't hesitate to reach out.
+
+Happy streaming!
